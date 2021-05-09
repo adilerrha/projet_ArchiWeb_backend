@@ -27,7 +27,7 @@ exports.addCategory = (req, res) => {
 };
 
 /**
- * Récupère une catégorie selon son identifiant
+ * Récupérer une catégorie selon son identifiant
  * @param {*} req 
  * @param {*} res 
  */
@@ -62,7 +62,7 @@ exports.getAllCategories = (req, res) => {
 };
 
 /**
- * Supprime une catégorie à l'aide de son identifiant
+ * Supprimer une catégorie à l'aide de son identifiant
  * @param {*} req 
  * @param {*} res 
  */

@@ -74,7 +74,7 @@ exports.getMovie = (req, res) => {
 
 
 /**
- * Modifier le film
+ * Modifier un film
  * @param {*} req 
  * @param {*} res 
  */
@@ -94,11 +94,6 @@ exports.updateMovie = (req, res) => {
                 let movie = new Movie(title, description, director, releaseYear, duration, stateID, result.urlImage, userID, categoryID);
                 movie.update(id, movie, (err, result) => {
                     if (err) {
-                        /* if (err.code == 'ER_TRUNCATED_WRONG_VALUE_FOR_FIELD') {
-                             res.status(400).send({ message: "Mauvaise requête !" });
-                         } else {
-                             
-                         }*/
                         res.status(500).send({ message: "Une erreur interne s'est produite !" });
                     } else {
                         if (result) {
@@ -115,7 +110,7 @@ exports.updateMovie = (req, res) => {
 
 /**
  * 
- * Supprime toute trace du film dans la DB et dans le dossier /uploads
+ * Supprimer un film
  * @param {*} req 
  * @param {*} res 
  */
@@ -148,9 +143,10 @@ exports.deleteMovie = (req, res) => {
 
 
 /**
- * Permet d'ajouter des films pour effectuer seulement des tests
+ * Ajouter des films pour effectuer seulement des tests
+ * @param {*} req 
+ * @param {*} res  
  */
-
 exports.fakerMovies = async(req, res) => {
     let qty = req.params.qty;
     if (qty > 20) {
