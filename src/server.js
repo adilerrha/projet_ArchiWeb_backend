@@ -23,7 +23,7 @@ require('./configuration/database.config.js');
 
 //Router
 require('./route/user.route.js')(app);
-
+require('./route/category.route.js')(app);
 // Créer le serveur
 const PORT = 3000;
 var server = app.listen(PORT, function() {
