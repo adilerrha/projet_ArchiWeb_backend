@@ -147,7 +147,7 @@ exports.deleteMovie = (req, res) => {
  * @param {*} req 
  * @param {*} res  
  */
-exports.fakerMovies = async(req, res) => {
+exports.fakerMovies = (req, res) => {
     let qty = req.params.qty;
     if (qty > 20) {
         return res.status(400).send({
